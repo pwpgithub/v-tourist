@@ -25,8 +25,8 @@
         <attribute name="spanLon" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Photo" positionX="-288" positionY="-126" width="128" height="120"/>
-        <element name="Pin" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Photo" positionX="-288" positionY="-126" width="128" height="118"/>
+        <element name="Pin" positionX="-63" positionY="-18" width="128" height="133"/>
         <element name="Restore" positionX="-306" positionY="66" width="128" height="148"/>
     </elements>
 </model>

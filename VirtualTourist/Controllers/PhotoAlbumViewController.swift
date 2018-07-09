@@ -102,10 +102,11 @@ class PhotoAlbumViewController: UIViewController {
 extension PhotoAlbumViewController {
     
     func updateDataSource() {
-        
+        print("\npin: \(pin)\n")
         self.photoStore.fetchAllPhotos(pin: pin) { (photosResult) in
             switch photosResult {
             case let .success(photos):
+                print("\nphotos.count: \(photos.count)")
                 self.photoDataSource.photos = photos
             case .failure( _ ):
                 self.photoDataSource.photos.removeAll()
@@ -196,7 +197,6 @@ extension PhotoAlbumViewController: MKMapViewDelegate {
 
 // MARK: - PhotoAlbumViewController (Configure UI)
 extension PhotoAlbumViewController {
-    
     
     fileprivate func configureCollectionView() {
         collectionView.dataSource = photoDataSource

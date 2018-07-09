@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ReJ-ct-7vn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ReJ-ct-7vn">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +34,7 @@
         <!--Virtual Tourist-->
         <scene sceneID="58O-H2-2KA">
             <objects>
-                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Avr-jO-7jm" customClass="MapViewController" customModule="PWNewVirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Avr-jO-7jm" customClass="MapViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jAa-kT-8CU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,7 +97,7 @@
         <!--Photo Album View Controller-->
         <scene sceneID="mqI-mc-u7a">
             <objects>
-                <viewController storyboardIdentifier="PhotoAlbumViewController" id="jcU-6n-GJ0" customClass="PhotoAlbumViewController" customModule="PWNewVirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoAlbumViewController" id="jcU-6n-GJ0" customClass="PhotoAlbumViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nV5-zf-oh6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,7 +115,7 @@
                                             <outlet property="delegate" destination="jcU-6n-GJ0" id="u2p-vg-Fic"/>
                                         </connections>
                                     </mapView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OZn-mf-cFU">
+                                    <collectionView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OZn-mf-cFU">
                                         <rect key="frame" x="0.0" y="188" width="375" height="450"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pHZ-lM-dts">
@@ -125,7 +125,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionViewCell" id="coT-7J-hIa" customClass="PhotoCollectionViewCell" customModule="PWNewVirtualTourist" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionViewCell" id="coT-7J-hIa" customClass="PhotoCollectionViewCell" customModule="VirtualTourist" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="118" height="118"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -140,22 +140,26 @@
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="aUb-3E-Jp3">
-                                                            <rect key="frame" x="41" y="41" width="37" height="37"/>
+                                                            <rect key="frame" x="41" y="40.666666666666657" width="37" height="36.999999999999993"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="37" id="OrF-Dl-Gz9"/>
+                                                                <constraint firstAttribute="height" constant="37" id="mvG-5o-HQl"/>
+                                                            </constraints>
                                                         </activityIndicatorView>
                                                     </subviews>
                                                 </view>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="pCT-Zr-Yof" firstAttribute="centerY" secondItem="coT-7J-hIa" secondAttribute="centerY" id="4Lr-Xh-uhL"/>
-                                                    <constraint firstItem="aUb-3E-Jp3" firstAttribute="centerY" secondItem="coT-7J-hIa" secondAttribute="centerY" id="KPq-Aq-d5d"/>
-                                                    <constraint firstItem="gu6-tQ-JCI" firstAttribute="width" secondItem="coT-7J-hIa" secondAttribute="width" id="UPl-eL-dID"/>
-                                                    <constraint firstItem="gu6-tQ-JCI" firstAttribute="centerX" secondItem="coT-7J-hIa" secondAttribute="centerX" id="WVX-mI-T0T"/>
-                                                    <constraint firstItem="aUb-3E-Jp3" firstAttribute="centerX" secondItem="coT-7J-hIa" secondAttribute="centerX" id="br1-Pi-E4S"/>
-                                                    <constraint firstItem="pCT-Zr-Yof" firstAttribute="width" secondItem="coT-7J-hIa" secondAttribute="width" id="rAw-le-dK0"/>
-                                                    <constraint firstItem="gu6-tQ-JCI" firstAttribute="height" secondItem="coT-7J-hIa" secondAttribute="height" id="sv7-1N-JWB"/>
-                                                    <constraint firstItem="gu6-tQ-JCI" firstAttribute="centerY" secondItem="coT-7J-hIa" secondAttribute="centerY" id="tUF-dR-D4n"/>
-                                                    <constraint firstItem="pCT-Zr-Yof" firstAttribute="centerX" secondItem="coT-7J-hIa" secondAttribute="centerX" id="uHJ-cH-4Td"/>
-                                                    <constraint firstItem="pCT-Zr-Yof" firstAttribute="height" secondItem="coT-7J-hIa" secondAttribute="height" id="ull-WT-6j6"/>
+                                                    <constraint firstItem="aUb-3E-Jp3" firstAttribute="centerY" secondItem="coT-7J-hIa" secondAttribute="centerY" id="1hV-ho-BVg"/>
+                                                    <constraint firstItem="pCT-Zr-Yof" firstAttribute="height" secondItem="coT-7J-hIa" secondAttribute="height" id="2AG-Qh-DXo"/>
+                                                    <constraint firstItem="pCT-Zr-Yof" firstAttribute="centerX" secondItem="coT-7J-hIa" secondAttribute="centerX" id="BrJ-Qe-03e"/>
+                                                    <constraint firstItem="gu6-tQ-JCI" firstAttribute="centerY" secondItem="coT-7J-hIa" secondAttribute="centerY" id="FG9-Mq-Fyq"/>
+                                                    <constraint firstItem="gu6-tQ-JCI" firstAttribute="height" secondItem="coT-7J-hIa" secondAttribute="height" id="Pnu-Gk-MiV"/>
+                                                    <constraint firstItem="pCT-Zr-Yof" firstAttribute="centerY" secondItem="coT-7J-hIa" secondAttribute="centerY" id="Ran-TE-UtR"/>
+                                                    <constraint firstItem="gu6-tQ-JCI" firstAttribute="centerX" secondItem="coT-7J-hIa" secondAttribute="centerX" id="dJp-SO-NF3"/>
+                                                    <constraint firstItem="pCT-Zr-Yof" firstAttribute="width" secondItem="coT-7J-hIa" secondAttribute="width" id="g1s-At-lag"/>
+                                                    <constraint firstItem="aUb-3E-Jp3" firstAttribute="centerX" secondItem="coT-7J-hIa" secondAttribute="centerX" id="pA7-yK-Gqh"/>
+                                                    <constraint firstItem="gu6-tQ-JCI" firstAttribute="width" secondItem="coT-7J-hIa" secondAttribute="width" id="y0O-zW-T2a"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="imageView" destination="pCT-Zr-Yof" id="Ylr-g3-dvU"/>
@@ -213,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HU8-kw-TG2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1239" y="120"/>
+            <point key="canvasLocation" x="1237.5999999999999" y="119.70443349753695"/>
         </scene>
     </scenes>
 </document>

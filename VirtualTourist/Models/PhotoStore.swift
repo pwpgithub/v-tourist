@@ -182,7 +182,7 @@ class PhotoStore {
     
     
     func fetchAllPhotos(pin: Pin, completion: @escaping (PhotosResult) -> Void) {
-        
+        print("\npin: \(pin)\n")
         let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
         let sortByDateTaken = NSSortDescriptor(key: #keyPath(Photo.dateTaken), ascending: false)
         fetchRequest.sortDescriptors = [sortByDateTaken]
@@ -204,7 +204,7 @@ class PhotoStore {
     
     
     func fetchPhotosSearch(pin: Pin, completion: @escaping (PhotosResult) -> Void) {
-        
+        print("\n\(#function)\n")
         pin.pageNumber += 1
         try? persistentContainer.viewContext.save()
         
@@ -213,7 +213,7 @@ class PhotoStore {
         let request = URLRequest(url: url)
         
         let task = self.session.dataTask(with: request) { (data, response, error) in
-          
+            print("in task")
             self.processPhotosRequest(pin: pin, data: data, error: error, completion: { (result) in
                 
                 performUIUpdatesOnMain {
