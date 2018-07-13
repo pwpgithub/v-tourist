@@ -143,6 +143,8 @@ extension PhotoAlbumViewController: UICollectionViewDelegate {
        
         self.newCollectionButton.isEnabled = false
         self.newCollectionButton.titleLabel?.alpha = 1.0
+        
+        if !photoDataSource.photos.isEmpty {
         let photo = photoDataSource.photos[indexPath.row]
         
         photoStore.fetchImageData(for: photo) { (imageDataResult) in
@@ -167,6 +169,9 @@ extension PhotoAlbumViewController: UICollectionViewDelegate {
                     collectionView.setNeedsDisplay()
                 }
             }
+        }
+        }else {
+            updateDataSource()
         }
     }
 }
